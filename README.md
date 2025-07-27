@@ -1,2 +1,2 @@
-# SEM-3-Local-LMS
-Local host
+# Local-LMS-DB
+on Local host
