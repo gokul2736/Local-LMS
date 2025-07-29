@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faculty Info</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f2f2f2, #dfe9f3);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #0077b6;
+      color: #fff;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .total-credits {
+      text-align: right;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
+      color: #0077b6;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      text-align: center;
+      text-decoration: none;
+      background-color: #0077b6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      width: fit-content;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #005f8a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👨‍🏫 FAC & SUB Info</h1>
+    <table id="faculty-table">
+      <thead>
+        <tr>
+          <th>Subject Code</th>
+          <th>Subject Name</th>
+          <th>Faculty Name</th>
+          <th>Slot</th>
+          <th>Category</th>
+          <th>Credits</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>19AI406</td><td>Digital Image Processing Techniques</td><td>Manikandan SP</td><td>4Q1-2</td><td>Professional Core</td><td>3</td><td>##### 43111</td></tr>
+        <tr><td>19AI304</td><td>C Programming</td><td>Senthil Kumar M</td><td>4Z7-9</td><td>Engineering Sciences</td><td>4</td><td>##### 43288</td></tr>
+        <tr><td>19CS301</td><td>Operating System</td><td>Kolli Amos Daniel</td><td>4I6-3</td><td>Professional Core</td><td>3</td><td>##### 43210</td></tr>
+        <tr><td>19CS308</td><td>Quantitative Aptitude I</td><td>Rajadurai K</td><td>3D4-7</td><td>Professional Elective</td><td>2</td><td>##### 43266</td></tr>
+        <tr><td>19CS405</td><td>Computer Networks</td><td>Gobalakrishnan N</td><td>4A5-4</td><td>Professional Core</td><td>4</td><td>##### 43233</td></tr>
+        <tr><td>19CS406</td><td>Software Testing Lab</td><td>Sandhya R</td><td>4C3-6</td><td>Professional Core</td><td>4</td><td>##### 43277</td></tr>
+        <tr><td>19EC301</td><td>Programming Microcontrollers</td><td>Raja S</td><td>4B2-5</td><td>Employability Enhancement</td><td>1</td><td>##### 43255</td></tr>
+        <tr><td>19MA302</td><td>Statistics</td><td>Thirumalai K</td><td>4X6-8</td><td>Basic Sciences</td><td>4</td><td>##### 43222</td></tr>
+        <tr><td>19MB401</td><td>Stock Market Fundamentals</td><td>Seema Balan</td><td>3Y3-1</td><td>Humanities & Sciences</td><td>3</td><td>##### 43244</td></tr>
+      </tbody>
+    </table>
+
+    <div class="total-credits" id="credit-count">Total Credits: --</div>
+
+    <a href="../index.html" class="back-btn">⬅ Return to Dashboard</a>
+  </div>
+
+  <script>
+    // Auto sum of credits
+    const rows = document.querySelectorAll("#faculty-table tbody tr");
+    let totalCredits = 0;
+    rows.forEach(row => {
+      const creditCell = row.cells[5];
+      if (creditCell) {
+        totalCredits += parseInt(creditCell.textContent);
+      }
+    });
+    document.getElementById("credit-count").textContent = `Total Credits: ${totalCredits}`;
+  </script>
+</body>
+</html>
