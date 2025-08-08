@@ -1,2 +1,2 @@
-# Local-LMS-DB
+# Local-LMS-
 on Local host
